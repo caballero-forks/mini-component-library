@@ -9,27 +9,23 @@ const SIZES = {
   small: {
     "--height": 8 + "px",
     "--borderRadius": "4px",
+    "--padding": "0px",
     "--borderRadiusValueBar": "4px 0 0 4px",
     "--paddingValueBar": 0 + "px",
-    "--border": "0px",
-    // "--fontSize": 16 / 16 + "rem",
-    // "--padding": "4px 12px"
   },
   medium: {
     "--height": 12 + "px",
     "--borderRadius": "4px",
+    "--padding": "0px",
     "--borderRadiusValueBar": "4px 0 0 4px",
     "--paddingValueBar": 0 + "px",
-    "--border": "0px",
-    // "--fontSize": 18 / 16 + "rem",
-    // "--padding": "12px 20px"
   },
   large: {
     "--height": 24 + "px",
     "--borderRadius": "8px",
-    "--borderRadiusValueBar": "8px 0 0 8px",
+    "--padding": "4px",
+    "--borderRadiusValueBar": "4px 0 0 4px",
     "--paddingValueBar": 4 + "px",
-    "--border": "4px solid ${COLORS.gray300};",
     // "--fontSize": 21 / 16 + "rem",
     // "--padding": "16px 32px"
   }
@@ -90,7 +86,6 @@ const BarBase = styled.progress`
  
   //VALUE
   &[value]::-webkit-progress-value {
-    border: var(--border);
     background-color: ${COLORS.primary};
     border-radius: var(--borderRadius);
     border-radius: ${p => p.value === 100 ? "4px" : "var(--borderRadiusValueBar)"};
@@ -100,6 +95,7 @@ const BarBase = styled.progress`
   &[value]::-webkit-progress-bar {
     background-color: ${COLORS.gray300};
     border-radius: var(--borderRadius);
+    padding: var(--padding);
   }
 `;
 
