@@ -6,7 +6,14 @@ import { COLORS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
 const ProgressBar = ({ value, size }) => {
-  return <strong>{value}</strong>;
+  return (
+    <>
+      <label for="loadinglabel">Loading</label>
+      <strong>{value}</strong>
+    </>
+  );
 };
+
+
 
 export default ProgressBar;
