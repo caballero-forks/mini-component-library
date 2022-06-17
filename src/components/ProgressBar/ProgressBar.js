@@ -26,26 +26,11 @@ const SIZES = {
     "--padding": "4px",
     "--borderRadiusValueBar": "4px 0 0 4px",
     "--paddingValueBar": 4 + "px",
-    // "--fontSize": 21 / 16 + "rem",
-    // "--padding": "16px 32px"
   }
 };
 
 const ProgressBar = ({ value, size }) => {
   const styles = SIZES[size];
-
-  // let Component;
-  // if (size === "small") {
-  //   Component = SmallBar;
-  // } else if (size === "medium") {
-  //   Component = MediumBar;
-  // } else if (size === "large") {
-  //   Component = LargeBar;
-  // // } else {
-  // //   throw new Error(`Unrecognized Button variant: ${value}`);
-  // }
-
-  // return <Component style={styles}></Component>;
 
   return (
     <Wrapper>
@@ -58,7 +43,6 @@ const ProgressBar = ({ value, size }) => {
         style={styles}
       >
       </BarBase>
-    
     </Wrapper>
   );
 };
@@ -74,11 +58,10 @@ const ValueLabel = styled.label`
 `;
 
 const BarBase = styled.progress`
-  //RESET
+  //RESET & BASIC STYLES
   &[value] {
     -webkit-appearance: none;
     appearance: none;
-
     width: 370px;
     height: var(--height);
     margin-left: 24px;
@@ -93,9 +76,10 @@ const BarBase = styled.progress`
 
   //BAR
   &[value]::-webkit-progress-bar {
-    background-color: ${COLORS.gray300};
+    background-color: ${COLORS.transparentGray15};
     border-radius: var(--borderRadius);
     padding: var(--padding);
+    box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   }
 `;
 
